@@ -1,0 +1,120 @@
+{
+  "nhanvien": [
+    {
+      "id": "NV001",
+      "MaBoPhan": "BP001",
+      "HoTen": "Nguyen Van A",
+      "NgaySinh": "1990-01-01",
+      "GioiTinh": "Nam",
+      "Luong": "10000000",
+      "SDT": "0362728710",
+      "DiaChi": "123 Le Loi, TP.HCM",
+      "MaChiNhanh": "CN001"
+    },
+    {
+      "id": "NV002",
+      "MaBoPhan": "BP002",
+      "HoTen": "Tran Thi B",
+      "NgaySinh": "1992-02-02",
+      "GioiTinh": "Nu",
+      "Luong": "12000000",
+      "SDT": "0987654321",
+      "DiaChi": "456 Nguyen Trai, Ha Noi",
+      "MaChiNhanh": "CN002"
+    }
+  ],
+  "chinhanh": [
+    {
+      "id": "CN001",
+      "TenChiNhanh": "Chi Nhánh Hà Nội",
+      "MaQuanLy": "NV001",
+      "DiaChi": "123 Le Loi, TP.HCM",
+      "SDT": "0123456789",
+      "TGMoCua": "08:00",
+      "TGDongCua": "22:00",
+      "BaiDoXe": "Co"
+    },
+    {
+      "id": "CN002",
+      "TenChiNhanh": "Chi Nhánh TP.HCM",
+      "MaQuanLy": "NV002",
+      "DiaChi": "456 Nguyen Trai, Ha Noi",
+      "SDT": "0987654321",
+      "TGMoCua": "09:00",
+      "TGDongCua": "21:00",
+      "BaiDoXe": "Khong"
+    }
+  ],
+  "bophan": [
+    {
+      "id": "BP001",
+      "TenBoPhan": "Bộ phận Khách hàng"
+    },
+    {
+      "id": "BP002",
+      "TenBoPhan": "Bộ phận Quản lý"
+    }
+  ],
+  "phieudatmon": [
+    {
+      "MaPhieuDatMon": "PM001",
+      "MaNhanVien": "NV001",
+      "MaCN": "CN001",
+      "MaKH": "KH001",
+      "SoBan": "12",
+      "LoaiDat": "DatVe",
+      "TgTruyCap": "08:30",
+      "ThoiDiemTruyCap": "2023-10-01 08:30",
+      "GhiChu": "Đặt trước",
+      "DiaChi": "123 Đường ABC, Hà Nội",
+      "TinhTrang": "Đang giao",
+      "PhiGiaoHang": 50
+    },
+    {
+      "MaPhieuDatMon": "PM002",
+      "MaNhanVien": "NV002",
+      "MaCN": "CN002",
+      "MaKH": "KH002",
+      "SoBan": "5",
+      "LoaiDat": "TaiCho",
+      "TgTruyCap": "19:00",
+      "ThoiDiemTruyCap": "2023-10-02 19:00",
+      "GhiChu": "Đặt gia đình",
+      "NgayDen": "2023-10-05",
+      "GioDen": "19:30",
+      "SoLuongKhach": 4
+    },
+    {
+      "MaPhieuDatMon": "PM003",
+      "MaNhanVien": "NV001",
+      "MaCN": "CN001",
+      "MaKH": "KH003",
+      "SoBan": "7",
+      "LoaiDat": "Offline",
+      "NgayLap": "2023-10-03"
+    }
+  ],
+  "danhgia": [
+    {
+      "MaDanhGia": "DG001",
+      "DiemPhucVu": 8,
+      "DiemViTriChiNhanh": 9,
+      "DiemChatLuongMon": 7,
+      "DiemKhongGian": 8,
+      "BinhLuan": "Phục vụ tốt, không gian sạch sẽ.",
+      "MaPhieu": "PM001"
+    },
+    {
+      "MaDanhGia": "DG002",
+      "DiemPhucVu": 9,
+      "DiemViTriChiNhanh": 8,
+      "DiemChatLuongMon": 9,
+      "DiemKhongGian": 9,
+      "BinhLuan": "Thức ăn ngon, phục vụ chu đáo.",
+      "MaPhieu": "PM002"
+    }
+  ],
+  "khachhang":[
+
+  ]
+}

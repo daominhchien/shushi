@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="D:\Shushi\font\fontawesome-free-6.6.0-web\fontawesome-free-6.6.0-web\css\all.css">
+    <title>Hệ Thống Shushi</title>
+    <link rel="stylesheet" href="D:\Shushi\css\style_Menu.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src ="D:\Shushi\script\script_Menu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h1>QUẢN LÝ</h1>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#">HỆ THỐNG QUẢN LÝ</a>
+                        <ul>
+                            <li>
+                                <a class="sub-btn" href="#">
+                                    <span class="icon"><i class="fa fa-user-tie"></i></span>
+                                    <span class="text">Quản lý nhân viên </span>
+                                    <span class="icon"><i class="fas fa-angle-right dropdown"></i></span>
+                                    
+
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="D:\Shushi\quanlynhanvien\index_nhanvien.html">
+                                            <span class="icon"><i class="fa fa-user-plus"></i></span>
+                                            <span class="text">Thông tin nhân viên</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="D:\Shushi\quanlynhanvien\index_diemdanhgia.html">
+                                            <span class="icon"><i class="fa fa-star"></i></span>
+                                            <span class="text">Điểm đánh giá NV</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                          <li>
+                                <a class="sub-btn" href="#">
+                                    <span class="icon"><i class="fa fa-map-marker-alt"></i></span>
+                                    <span class="text">Quản lý chi nhánh</span>
+                                    <span class="icon"><i class="fas fa-angle-right dropdown"></i></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="D:\Shushi\quanlychinhanh\index_chinhanh.html">
+                                            <span class="icon"><i class="fa fa-map-marker-alt"></i></span>
+                                            <span class="text">Chi nhánh</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="D:\Shushi\quanlychinhanh\index_menuchinhanh.html">
+                                            <span class="icon"><i class="fa fa-list-alt"></i></span>
+                                            <span class="text">Menu chi nhánh</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="D:\Shushi\quanlychinhanh\index_danhgia.html">
+                                            <span class="icon"><i class="fa fa-star"></i></span> <!-- Có thể thay bằng <i class="fa fa-thumbs-up"></i> nếu muốn -->
+                                            <span class="text">Đánh giá chi nhánh</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="D:\Shushi\quanlychinhanh\index_monan.html">
+                                            <span class="icon"><i class="fa fa-utensils"></i></span>
+                                            <span class="text">Món ăn</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlykhachhang\index_khachhang.html">
+                                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                                    <span class="text">Quản lý Khách Hàng</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlythekhachhang\index_thekhachhang.html">
+                                    <span class="icon"><i class="fa fa-id-card"></i></span>
+                                    <span class="text">Quản lý thẻ khách hàng</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlyphieudatmon\index_phieudatmon.html">
+                                    <span class="icon"><i class="fa fa-receipt"></i></span>
+                                    <span class="text">Quản lý phiếu đặt món</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlyhanghoadon\index_hoadon.html">
+                                    <span class="icon"><i class="fa fa-file-invoice-dollar"></i></span>
+                                    <span class="text">Quản lý hóa đơn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlydoanhthu\index_doanhthu.html">
+                                    <span class="icon"><i class="fa fa-chart-line"></i></span>
+                                    <span class="text">Quản lý doanh thu</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="#">TÀI KHOẢN</a>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                                    <span class="text">Đăng xuất</span>
+                                </a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+
+
+    
+        <!-- Search Box -->
+            <div class="search-box">
+                <form action="">
+                <input type="text" placeholder="Mã chi nhánh">
+                </form>
+                <button>🔍</button>
+            </div>
+
+        <!-- Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã CN</th>
+                            <th>Tên chi nhánh</th>
+                            <th>Mã món</th>
+                            <th>Tên món</th>
+                            <th>Chỉnh sửa</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+
+            </div>
+            <div id="container">
+                <div id="ADD" class="add-plane">
+                    <button id="openModalButton">Thêm Menu chi nhánh</button>
+                </div>
+                
+                <!-- Modal Overlay -->
+                <div id="modalOverlay" class="modal-overlay" >
+                    <div class="modal">
+                        <button type="button" id="closeModalButton" class="close-button">&times;</button> <!-- Nút đóng modal -->
+                        <h3>Thêm Menu CN</h3>
+                        <form id="addPlaneForm">
+                            <div class ="form-row">
+                                <div class="form-group">
+                                    <label for="TenChiNhanh">Tên chi nhánh:</label>
+                                    <select id="TenChiNhan" required>
+                                        <option value="1">Chọn chi nhánh</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="TenMon">Tên món:</label>
+                                    <select id="TenMon" required>
+                                        <option value="1">Chọn món: </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" id="addPlaneButton">Thêm</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.sub-btn').click(function(e){
+                e.preventDefault(); // Ngăn chặn hành vi mặc định
+                $(this).next('.sub-menu').slideToggle(); // Mở hoặc thu gọn menu con
+                $(this).find('.dropdown').toggleClass('rotate'); // Xoay icon
+            });
+        });
+    </script>
+    
+</body>
+
+
+
+
+</html>
