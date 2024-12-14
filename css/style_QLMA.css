@@ -167,7 +167,7 @@ header h2 {
 .search-box {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin-top: 20px ;
 }
 
 .search-box input {
@@ -451,6 +451,14 @@ body {
     height: 35px;
     font-size: 11px;
     
+}
+.form-group input {
+    padding: 8px; /* Padding inside the input box */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    width: 200px; /* Increase width of the input box */
+    height: 35px;
+    font-size: 11px;
 }
 
 .button-search{

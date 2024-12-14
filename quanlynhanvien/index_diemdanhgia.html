@@ -17,7 +17,7 @@
 <body>
     <div class="dashboard">
         <aside class="sidebar">
-            <h1>QUẢN LÝ</h1>
+            <h1>SUSHI</h1>
             <nav>
                 <ul class="menu">
                     <li>
@@ -67,7 +67,7 @@
                                     </li>
                                     <li>
                                         <a href="D:\Shushi\quanlychinhanh\index_danhgia.html">
-                                            <span class="icon"><i class="fa fa-star"></i></span> <!-- Có thể thay bằng <i class="fa fa-thumbs-up"></i> nếu muốn -->
+                                            <span class="icon"><i class="fa fa-star"></i></span> 
                                             <span class="text">Đánh giá chi nhánh</span>
                                         </a>
                                     </li>
@@ -82,8 +82,8 @@
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlykhachhang\index_khachhang.html">
-                                    <span class="icon"><i class="fa fa-id-card"></i></span>
-                                    <span class="text">Quản lý Khách Hàng</span>
+                                    <span class="icon"><i class="fa fa-users"></i></span>
+                                    <span class="text">Quản lý khách kàng</span>
                                 </a>
                             </li>
                             <li>
@@ -96,6 +96,12 @@
                                 <a href="D:\Shushi\quanlyphieudatmon\index_phieudatmon.html">
                                     <span class="icon"><i class="fa fa-receipt"></i></span>
                                     <span class="text">Quản lý phiếu đặt món</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlychitietphieudatmon\index_chitietphieudatmon.html">
+                                    <span class="icon"><i class="fa fa-file-signature"></i></span>
+                                    <span class="text">Quản lý chi tiết PDM</span>
                                 </a>
                             </li>
                             <li>
@@ -135,11 +141,26 @@
 
     
         <!-- Search Box -->
-            <div class="search-box">
-                <form action="">
-                <input type="text" placeholder="Mã nhân viên">
-                </form>
-                <button>🔍</button>
+        
+            <div class="form-container">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="TenChiNhanh">Tên chi nhánh:</label>
+                        <select id="TenChiNhanh" required>
+                            <option value="1">Chọn chi nhánh</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="NgayThang">Date:</label>
+                        <input type="date" id="NgayThang" required>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <form action="">
+                    <input type="text" id ="searchInput"placeholder="Mã nhân viên">
+                    </form>
+                    <button id = "searchButton">🔍</button>
+                </div>
             </div>
 
         <!-- Table -->

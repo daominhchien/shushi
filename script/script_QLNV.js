@@ -374,11 +374,12 @@ function editNhanVien(id) {
         .catch(error => console.error('Error editing nhanvien:', error));
 }
 
-// Tìm kiếm nhân viên
+
 document.addEventListener('DOMContentLoaded', function() {
+    const searchButton = document.getElementById('searchButton');
     const searchInput = document.getElementById('searchInput');
 
-    searchInput.addEventListener('input', function() {
+    searchButton.addEventListener('click', function() {
         const searchTerm = searchInput.value.trim().toLowerCase();
         if (searchTerm) {
             searchNhanVien(searchTerm);
@@ -386,8 +387,15 @@ document.addEventListener('DOMContentLoaded', function() {
             getNhanVien(renderNhanVien); // Hiển thị lại danh sách đầy đủ nếu ô tìm kiếm trống
         }
     });
-});
 
+    // Tìm kiếm ngay khi người dùng gõ (khi ô tìm kiếm trống sẽ hiện lại toàn bộ)
+    searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        if (!searchTerm) {
+            getNhanVien(renderNhanVien); // Hiển thị lại danh sách đầy đủ nếu ô tìm kiếm trống
+        }
+    });
+});
 function searchNhanVien(searchTerm) {
     fetch(nhanVienAPI)
         .then(function(response) {
@@ -395,7 +403,26 @@ function searchNhanVien(searchTerm) {
         })
         .then(function(nhanviens) {
             const filteredNhanViens = nhanviens.filter(function(nhanvien) {
-                return nhanvien.MaNhanVien.toLowerCase().includes(searchTerm);
+                const id = nhanvien.id; // Lấy id của nhân viên
+                const hoTen = nhanvien.HoTen?.toLowerCase(); // Lấy họ tên và chuyển về chữ thường
+
+                // Chuyển searchTerm sang chữ thường
+                const lowerSearchTerm = searchTerm.trim().toLowerCase();
+
+                // So sánh searchTerm với id hoặc HoTen
+                if (typeof id === 'string' && id.toLowerCase() === lowerSearchTerm) {
+                    return true;
+                }
+
+                if (typeof id === 'number' && id === Number(searchTerm)) {
+                    return true;
+                }
+
+                if (hoTen && hoTen.includes(lowerSearchTerm)) {
+                    return true;
+                }
+
+                return false;
             });
             renderNhanVien(filteredNhanViens);
         })

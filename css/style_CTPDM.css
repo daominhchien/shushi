@@ -167,7 +167,7 @@ header h2 {
 .search-box {
     display: flex;
     justify-content: center;
-    margin-top:20px;
+    margin: 20px 0;
 }
 
 .search-box input {
@@ -409,71 +409,3 @@ body {
 .close-button:hover {
     color: red; /* Màu khi hover */
 }
-
-/*-----*/
-
-.form-container {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Space between form row and search box */
-    width: 90%; 
-    margin: 20px auto;
-}
-
-.form-row {
-    display: flex;
-    gap: 10px; /* Space between form groups */
-    margin: 20px 0;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 5px; /* Space between label and select */
-  
-    
-}
-
-.form-group select {
-    padding: 8px; /* Padding inside the select box */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
-   ; /* Font size */
-}
-.form-group select {
-  
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
-    width: 200px; /* Increase width of the select box */
-    height: 35px;
-    font-size: 11px;
-    
-}
-.form-group input {
-    padding: 8px; /* Padding inside the input box */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
-    width: 200px; /* Increase width of the input box */
-    height: 35px;
-    font-size: 11px;
-}
-
-.button-search{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    height: 40px;
-}
-.btn{
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #7da1c4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-} 

@@ -1,6 +1,4 @@
-// script_DiemNV.js
 
-// Hàm gọi API để lấy điểm tổng của nhân viên
 async function getDiemTongNhanVien(callback) {
     try {
         const response = await fetch('http://localhost:3001/api/diemtongnhanvien');
@@ -14,7 +12,7 @@ async function getDiemTongNhanVien(callback) {
     }
 }
 
-// Hàm hiển thị dữ liệu lên bảng
+
 function renderDiemTong(list_diem) {
     const listDiem = document.querySelector('tbody');
     if (!listDiem) {
@@ -38,7 +36,8 @@ function renderDiemTong(list_diem) {
     listDiem.innerHTML = htmls;
 }
 
-// Khởi tạo khi tải trang
+
 document.addEventListener('DOMContentLoaded', function() {
     getDiemTongNhanVien(renderDiemTong);
 });
+

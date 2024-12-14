@@ -1,15 +1,15 @@
 {
   "nhanvien": [
     {
-      "id": "NV001",
-      "MaBoPhan": "BP001",
+      "MaBoPhan": "BP002",
+      "MaChiNhanh": "CN001",
       "HoTen": "Nguyen Van A",
       "NgaySinh": "1990-01-01",
       "GioiTinh": "Nam",
       "Luong": "10000000",
       "SDT": "0362728710",
       "DiaChi": "123 Le Loi, TP.HCM",
-      "MaChiNhanh": "CN001"
+      "id": "NV001"
     },
     {
       "id": "NV002",
@@ -43,6 +43,16 @@
       "TGMoCua": "09:00",
       "TGDongCua": "21:00",
       "BaiDoXe": "Khong"
+    },
+    {
+      "TenChiNhanh": "HCM",
+      "MaQuanLy": "NV002",
+      "DiaChi": "pn3",
+      "SDT": "0362728710",
+      "TGMoCua": "13:34",
+      "TGDongCua": "12:39",
+      "BaiDoXe": "Có",
+      "id": "h64I5LT"
     }
   ],
   "bophan": [
@@ -55,43 +65,21 @@
       "TenBoPhan": "Bộ phận Quản lý"
     }
   ],
-  "phieudatmon": [
+  "chitietdatmon": [
     {
-      "MaPhieuDatMon": "PM001",
-      "MaNhanVien": "NV001",
-      "MaCN": "CN001",
-      "MaKH": "KH001",
-      "SoBan": "12",
-      "LoaiDat": "DatVe",
-      "TgTruyCap": "08:30",
-      "ThoiDiemTruyCap": "2023-10-01 08:30",
-      "GhiChu": "Đặt trước",
-      "DiaChi": "123 Đường ABC, Hà Nội",
-      "TinhTrang": "Đang giao",
-      "PhiGiaoHang": 50
+      "MaPhieu": "PM001",
+      "MaMon": "1",
+      "SoLuong": "16"
     },
     {
-      "MaPhieuDatMon": "PM002",
-      "MaNhanVien": "NV002",
-      "MaCN": "CN002",
-      "MaKH": "KH002",
-      "SoBan": "5",
-      "LoaiDat": "TaiCho",
-      "TgTruyCap": "19:00",
-      "ThoiDiemTruyCap": "2023-10-02 19:00",
-      "GhiChu": "Đặt gia đình",
-      "NgayDen": "2023-10-05",
-      "GioDen": "19:30",
-      "SoLuongKhach": 4
+      "MaPhieu": "PM002",
+      "MaMon": "3",
+      "SoLuong": "16"
     },
     {
-      "MaPhieuDatMon": "PM003",
-      "MaNhanVien": "NV001",
-      "MaCN": "CN001",
-      "MaKH": "KH003",
-      "SoBan": "7",
-      "LoaiDat": "Offline",
-      "NgayLap": "2023-10-03"
+      "MaPhieu": "PM003",
+      "MaMon": "4",
+      "SoLuong": "16"
     }
   ],
   "danhgia": [
@@ -114,7 +102,173 @@
       "MaPhieu": "PM002"
     }
   ],
-  "khachhang":[
-
+  "khachhang": [
+    {
+      "HoTen": "Minh Chiến",
+      "SDT": "0362728710",
+      "Email": "daominhchien2k4@gamail.com",
+      "CCCD": "10125705777",
+      "GioiTinh": "Nam",
+      "MatKhau": "123456789",
+      "id": 1
+    },
+    {
+      "HoTen": "Cương",
+      "SDT": "0362728710",
+      "Email": "cuong2k4@gamail.com",
+      "CCCD": "10125705777",
+      "GioiTinh": "Nữ",
+      "MatKhau": "111",
+      "id": 3
+    }
+  ],
+  "monan": [
+    {
+      "TenMonAn": "Súp lơ",
+      "MaLoai": "LM001",
+      "GiaHienTai": "1000000",
+      "URL": "WWWWWW",
+      "MoTa": "...",
+      "id": 1
+    },
+    {
+      "TenMonAn": "Mì tôm",
+      "MaLoai": "LM002",
+      "GiaHienTai": "1000000",
+      "URL": "WWWWWW",
+      "MoTa": "...",
+      "id": 3
+    },
+    {
+      "TenMonAn": "Mì sào",
+      "MaLoai": "LM001",
+      "GiaHienTai": "1000",
+      "URL": "fffff",
+      "MoTa": "đ",
+      "id": 4
+    },
+    {
+      "TenMonAn": "bahs mif",
+      "MaLoai": "LM001",
+      "GiaHienTai": "1000000",
+      "URL": "qq",
+      "MoTa": "",
+      "id": 5
+    }
+  ],
+  "thekhachhang": [
+    {
+      "MaNhanVien": "NV001",
+      "MaKhachHang": "1",
+      "LoaiThe": "2",
+      "NgayLap": "2024-12-01",
+      "DiemTichLuy": "10",
+      "id": 1
+    },
+    {
+      "MaKhachHang": "3",
+      "MaNhanVien": "NV002",
+      "LoaiThe": "2",
+      "NgayLap": "2024-12-10",
+      "DiemTichLuy": "1000",
+      "id": 3
+    }
+  ],
+  "loaimon": [
+    {
+      "id": "LM001",
+      "TenLoai": "Món súp"
+    },
+    {
+      "id": "LM002",
+      "TenLoai": "Tráng miệng"
+    }
+  ],
+  "menuchinhanh": [
+    {
+      "MaChiNhanh": "CN002",
+      "MaMon": "1",
+      "id": 1
+    },
+    {
+      "MaChiNhanh": "CN002",
+      "MaMon": "3",
+      "id": 2
+    },
+    {
+      "MaChiNhanh": "CN002",
+      "MaMon": "1",
+      "id": 3
+    }
+  ],
+  "hoadon": [
+    {
+      "id": "HD001",
+      "MaPhieuDatMon": "PM001",
+      "TongTien": "1000000",
+      "SoTienGiam": "0",
+      "SoTienThanhToan": "1000000"
+    },
+    {
+      "id": "HD002",
+      "MaPhieuDatMon": "PM002",
+      "TongTien": "1000000",
+      "SoTienGiam": "0",
+      "SoTienThanhToan": "1000000"
+    },
+    {
+      "id": "HD003",
+      "MaPhieuDatMon": "PM003",
+      "TongTien": "1000000",
+      "SoTienGiam": "0",
+      "SoTienThanhToan": "1000000"
+    }
+  ],
+  "chitietphieudatmon": [
+    {
+      "MaPhieuDatMon": "2",
+      "MaMon": "1",
+      "SoLuong": "1222",
+      "id": 1
+    }
+  ],
+  "datve": [
+    {
+      "id": "1",
+      "MaNhanVien": "NV01",
+      "MaChiNhanh": "CN01",
+      "MaKhachHang": "KH01",
+      "SoBan": "3",
+      "ThoiDiemTruyCap": "2024-03-20",
+      "ThoiGianTruyCap": "15:00",
+      "GhiChu": "Bàn view đẹp",
+      "DiaChi": "123 Le Loi, TP.HCM",
+      "TinhTrang": "ChuaXacNhan",
+      "PhiGiaoHang": "1800"
+    }
+  ],
+  "taicho": [
+    {
+      "id": "2",
+      "MaNhanVien": "NV02",
+      "MaChiNhanh": "CN01",
+      "MaKhachHang": "KH01",
+      "SoBan": "5",
+      "ThoiDiemTruyCap": "2024-03-20",
+      "ThoiGianTruyCap": "15:00",
+      "GhiChu": "Bàn view đẹp",
+      "NgayDen": "2024-03-21",
+      "GioDen": "18:00"
+    }
+  ],
+  "offline": [
+    {
+      "id": "3",
+      "MaNhanVien": "NV01",
+      "MaChiNhanh": "CN01",
+      "MaKhachHang": "KH01",
+      "SoBan": "3",
+      "NgayLap": "2024-03-20"
+    }
   ]
 }

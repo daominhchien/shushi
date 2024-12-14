@@ -17,7 +17,7 @@
 <body>
     <div class="dashboard">
         <aside class="sidebar">
-            <h1>QUẢN LÝ</h1>
+            <h1>SUSHI</h1>
             <nav>
                 <ul class="menu">
                     <li>
@@ -82,20 +82,26 @@
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlykhachhang\index_khachhang.html">
-                                    <span class="icon"><i class="fa fa-id-card"></i></span>
-                                    <span class="text">Quản lý Khách Hàng</span>
+                                    <span class="icon"><i class="fa fa-users"></i></span>
+                                    <span class="text">Quản lý khách hàng</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlythekhachhang\index_thekhachhang.html">
                                     <span class="icon"><i class="fa fa-id-card"></i></span>
-                                    <span class="text">Quản lý thẻ khách hàng</span>
+                                    <span class="text">Quản lý THẺ khách hàng</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlyphieudatmon\index_phieudatmon.html">
                                     <span class="icon"><i class="fa fa-receipt"></i></span>
                                     <span class="text">Quản lý phiếu đặt món</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlychitietphieudatmon\index_chitietphieudatmon.html">
+                                    <span class="icon"><i class="fa fa-file-signature"></i></span>
+                                    <span class="text">Quản lý chi tiết PDM</span>
                                 </a>
                             </li>
                             <li>
@@ -135,12 +141,12 @@
 
     
         <!-- Search Box -->
-            <div class="search-box">
-                <form action="">
-                <input type="text" placeholder="Mã hóa đơn">
-                </form>
-                <button>🔍</button>
-            </div>
+        <div class="search-box">
+            <form action="">
+            <input type="text" id ="searchInput"placeholder="Mã hóa đơn">
+            </form>
+            <button id = "searchButton">🔍</button>
+        </div>
 
         <!-- Table -->
             <div class="table-container">
@@ -153,9 +159,11 @@
                             <th>Tổng tiền</th>
                             <th>Số tiền giảm</th>
                             <th>Số tiền thanh toán</th>
-                            <th>Chỉnh sửa</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        
+                    </tbody>
                 </table>
 
             </div>

@@ -17,7 +17,7 @@
 <body>
     <div class="dashboard">
         <aside class="sidebar">
-            <h1>QUẢN LÝ</h1>
+            <h1>SUSHI</h1>
             <nav>
                 <ul class="menu">
                     <li>
@@ -82,20 +82,26 @@
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlykhachhang\index_khachhang.html">
-                                    <span class="icon"><i class="fa fa-id-card"></i></span>
-                                    <span class="text">Quản lý Khách Hàng</span>
+                                    <span class="icon"><i class="fa fa-users"></i></span>
+                                    <span class="text">Quản lý khách hàng</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlythekhachhang\index_thekhachhang.html">
                                     <span class="icon"><i class="fa fa-id-card"></i></span>
-                                    <span class="text">Quản lý thẻ khách hàng</span>
+                                    <span class="text">Quản lý THẺ khách hàng</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="D:\Shushi\quanlyphieudatmon\index_phieudatmon.html">
                                     <span class="icon"><i class="fa fa-receipt"></i></span>
                                     <span class="text">Quản lý phiếu đặt món</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="D:\Shushi\quanlychitietphieudatmon\index_chitietphieudatmon.html">
+                                    <span class="icon"><i class="fa fa-file-signature"></i></span>
+                                    <span class="text">Quản lý chi tiết PDM</span>
                                 </a>
                             </li>
                             <li>
@@ -136,12 +142,12 @@
 
     
         <!-- Search Box -->
-            <div class="search-box">
-                <form action="">
-                <input type="text" placeholder="Mã chi nhánh">
-                </form>
-                <button>🔍</button>
-            </div>
+        <div class="search-box">
+            <form action="">
+            <input type="text" id ="searchInput"placeholder="Mã chi nhánh">
+            </form>
+            <button id = "searchButton">🔍</button>
+        </div>
 
         <!-- Table -->
             <div class="table-container">
@@ -156,6 +162,9 @@
                             <th>Chỉnh sửa</th>
                         </tr>
                     </thead>
+                    <tbody>
+
+                    </tbody>
                     
                 </table>
 
@@ -173,19 +182,21 @@
                         <form id="addPlaneForm">
                             <div class ="form-row">
                                 <div class="form-group">
-                                    <label for="TenChiNhanh">Tên chi nhánh:</label>
-                                    <select id="TenChiNhan" required>
+                                    <label for="MaChiNhanh">Mã chi nhánh:</label>
+                                    <select id="MaChiNhanh" required>
                                         <option value="1">Chọn chi nhánh</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="TenMon">Tên món:</label>
-                                    <select id="TenMon" required>
+                                    <label for="MaMon">Mã món:</label>
+                                    <select id="MaMon" required>
                                         <option value="1">Chọn món: </option>
                                     </select>
                                 </div>
                             </div>
                             <button type="button" id="addPlaneButton">Thêm</button>
+                            <button type="button" class="save-button" style="display: none;">Lưu thay đổi</button>
+
                         </form>
                     </div>
                 </div>

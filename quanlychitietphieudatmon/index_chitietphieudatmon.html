@@ -6,10 +6,10 @@
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="D:\Shushi\font\fontawesome-free-6.6.0-web\fontawesome-free-6.6.0-web\css\all.css">
     <title>Hệ Thống Shushi</title>
-    <link rel="stylesheet" href="D:\Shushi\css\style_QLCN.css">
+    <link rel="stylesheet" href="D:\Shushi\css\style_CTPDM.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <script src ="D:\Shushi\script\script_QLCN.js"></script>
+    <script src ="D:\Shushi\script\script_CTPDM.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -141,12 +141,12 @@
 
     
         <!-- Search Box -->
-            <div class="search-box">
-                <form action="">
-                <input type="text" id ="searchInput"placeholder="Mã chi nhánh">
-                </form>
-                <button id = "searchButton">🔍</button>
-            </div>
+        <div class="search-box">
+            <form action="">
+            <input type="text" id ="searchInput"placeholder="Mã CT phiếu">
+            </form>
+            <button id = "searchButton">🔍</button>
+        </div>
 
         <!-- Table -->
             <div class="table-container">
@@ -154,14 +154,10 @@
                     <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Mã CN</th>
-                            <th>Tên CN</th>
-                            <th>Mã quản lý</th>
-                            <th>Địa chỉ</th>
-                            <th>TG mở cửa</th>
-                            <th>TG đóng cửa</th>
-                            <th>SĐT</th>
-                            <th>Bãi đỗ xe không</th>
+                            <th>Mã phiếu đặt món</th>
+                            <th>Mã món</th>
+                            <th>Tên Món</th>
+                            <th>Số lượng món</th>
                             <th>Chỉnh sửa</th>
                         </tr>
                     </thead>
@@ -180,59 +176,38 @@
             
             <div id="container">
                 <div id="ADD" class="add-plane">
-                    <button id="openModalButton">Thêm Chi Nhánh</button>
+                    <button id="openModalButton">Thêm chi tiết phiếu</button>
                 </div>
                 
                 <!-- Modal Overlay -->
                 <div id="modalOverlay" class="modal-overlay" >
                     <div class="modal">
                         <button type="button" id="closeModalButton" class="close-button">&times;</button> <!-- Nút đóng modal -->
-                        <h3>Thêm Chi Nhánh</h3>
+                        <h3>Thêm chi tiết</h3>
                         <form id="addPlaneForm">
                             <div class ="form-row">
                                 <div class="form-group">
-                                    <label for="TenChiNhanh">Tên chi nhánh:</label>
-                                    <input type="text" id="TenChiNhanh" required>
+                                    <label for="MaPhieuDatMon">Mã phiếu đặt món:</label>
+                                    <select id="MaPhieuDatMon" required>
+                                        <option value="">Chon mã phiếu</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="MaQuanLy">Mã quản lý:</label>
-                                    <select id="MaQuanLy" required>
-                                        <option value="1">Chọn quản lý</option>
+                                    <label for="MaMon">Mã món:</label>
+                                    <select id="MaMon" required>
+                                        <option value="">Chon ma mon</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class ="form-row">
+                                <div class="form-group">
+                                    <label for="SoLuong">Sô lượng:</label>
+                                    <input type="number" id="SoLuong" required>
 
-                            <div class ="form-row">
-                                <div class="form-group">
-                                    <label for="DiaChi">Địa chỉ:</label>
-                                    <input type="text" id="DiaChi" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="SDT">SDT:</label>
-                                    <input type="text" id="SDT" required>
                                 </div>
                             </div>
-                            <div class ="form-row">
-                                <div class="form-group">
-                                    <label for="TGMoCua">TG mở cửa:</label>
-                                    <input type="time" id="TGMoCua" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="TGDongCua">TG đóng cửa:</label>
-                                    <input type="time" id="TGDongCua" required>
-                                </div>
-                            </div>
-                            <div class ="form-row">
-                                <div class="form-group">
-                                    <label for="BaiDoXe">Có bãi đỗ xe không:</label>
-                                    <select id="BaiDoXe" required>
-                                        <option value="1">Có</option>
-                                        <option value="0">Không</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-            
+                            
+
                             <button type="button" id="addPlaneButton">Thêm</button>
                             <button type="button" class="save-button" style="display: none;">Lưu thay đổi</button>
                         </form>
