@@ -324,7 +324,18 @@ body {
 .modal-overlay.visible {
     display: flex; /* Hiển thị modal khi có lớp visible */
 }
-
+.modal {
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%; /* Đảm bảo modal không vượt quá màn hình */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto; /* Thêm cuộn nếu nội dung quá nhiều */
+    max-height: 90vh; /* Giới hạn chiều cao tối đa để tránh tràn màn hình */
+}
 
 .modal .form-row {
     display: flex;
@@ -399,10 +410,11 @@ body {
     color: red; /* Màu khi hover */
 }
 
-/* ----- hiện thi chi tiết ----*/
+/* ----- HHiện thi chi tiết ----*/
 
 /* Modal styling */
-.modal {
+
+/* .modal {
     display: none;
     position: fixed;
     top: 0;
@@ -414,14 +426,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .modal-content {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #b9b7b7;
     padding: 25px;
     border-radius: 8px;
     width: 90%;
@@ -496,9 +508,6 @@ body {
     opacity: 0.9;
     transform: translateY(-1px);
 }
-
-
-
 .order-details h2 {
     color: #2d5167;
     margin-bottom: 20px;

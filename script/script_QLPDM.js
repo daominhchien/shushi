@@ -1,367 +1,9 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     const openModalButton = document.getElementById('openModalButton');
-//     const modalOverlay = document.getElementById('modalOverlay');
-//     const addPlaneButton = document.getElementById('addPlaneButton');
-//     const closeModalButton = document.getElementById('closeModalButton');
-//     const saveButton = document.querySelector('.save-button');
-//     const formModal = document.querySelector('.modal');
 
-//     // Open modal
-//     openModalButton.addEventListener('click', function() {
-//         modalOverlay.style.display = 'flex';
-//         document.body.style.overflow = 'hidden';
-//     });
 
-//     // Add new "Phiếu Đặt Món"
-//     addPlaneButton.addEventListener('click', function() {
-//         addPhieuDatMon();
-//         modalOverlay.style.display = 'none';
-//         document.body.style.overflow = 'auto';
-//     });
-
-//     // Close modal
-//     closeModalButton.addEventListener('click', function() {
-//         modalOverlay.style.display = 'none';
-//         document.body.style.overflow = 'auto';
-//         resetForm();
-//         document.querySelector('#addPlaneButton').style.display = 'inline-block';
-//         document.querySelector('.save-button').style.display = 'none';
-//         document.querySelector('.modal h3').textContent = 'Thêm Phiếu Đặt Món';
-//         formModal.style.backgroundColor = '';
-//     });
-
-//     // Save changes
-//     saveButton.addEventListener('click', function() {
-//         modalOverlay.style.display = 'none';
-//         document.body.style.overflow = 'auto';
-//     });
-// });
-
-// function resetForm() {
-//     document.querySelector('select[id="MaNhanVien"]').value = '';
-//     document.querySelector('select[id="MaChiNhanh"]').value = '';
-//     document.querySelector('select[id="MaKhachHang"]').value = '';
-// }
-
-// async function fetchAllData() {
-//     try {
-//         const nhanVienResponse = fetch('http://localhost:3000/nhanvien');
-//         const chiNhanhResponse = fetch('http://localhost:3000/chinhanh');
-//         const khachHangResponse = fetch('http://localhost:3000/khachhang');
-
-//         const [nhanVienData, chiNhanhData, khachHangData] = await Promise.all([
-//             nhanVienResponse.then(res => res.json()),
-//             chiNhanhResponse.then(res => res.json()),
-//             khachHangResponse.then(res => res.json())
-//         ]);
-
-//         return {
-//             nhanvien: nhanVienData,
-//             chinhanh: chiNhanhData,
-//             khachhang: khachHangData
-//         };
-//     } catch (error) {
-//         console.error('Error fetching data:', error);
-//         throw error;
-//     }
-// }
-
-// function populateSelect(selectId, data, labelKey, valueKey) {
-//     const selectElement = document.getElementById(selectId);
-//     selectElement.innerHTML = '<option value="">-- Chọn --</option>';
-//     data.forEach(item => {
-//         const option = document.createElement('option');
-//         option.value = item[valueKey];
-//         option.textContent = item[labelKey];
-//         selectElement.appendChild(option);
-//     });
-// }
-
-// async function init() {
-//     try {
-//         const { nhanvien, chinhanh, khachhang } = await fetchAllData();
-//         populateSelect('MaNhanVien', nhanvien, 'HoTen', 'id');
-//         populateSelect('MaChiNhanh', chinhanh, 'TenChiNhanh', 'id');
-//         populateSelect('MaKhachHang', khachhang, 'HoTen', 'id');
-//     } catch (error) {
-//         console.error('Error initializing data:', error);
-//     }
-// }
-
-// init();
-
-// var phieuDatMonAPI = 'http://localhost:3000/datve';
-// var 
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     start();
-// });
-
-// function start() {
-//     getPhieuDatMon(renderPhieuDatMon);
-// }
-
-// function getPhieuDatMon(callback) {
-//     fetch(phieuDatMonAPI)
-//         .then(function(response) {
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok ' + response.statusText);
-//             }
-//             return response.json();
-//         })
-//         .then(callback)
-//         .catch(error => console.error('Error fetching phieudatmon:', error));
-// }
-
-// function createPhieuDatMon(data, callback) {
-//     var options = {
-//         method: 'POST',
-//         body: JSON.stringify(data),
-//         headers: {
-//             "Content-Type": "application/json",
-//         }
-//     };
-
-//     fetch(phieuDatMonAPI, options)
-//         .then(function(response) {
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok ' + response.statusText);
-//             }
-//             return response.json();
-//         })
-//         .then(callback)
-//         .catch(error => console.error('Error creating phieudatmon:', error));
-// }
-
-// function deletePhieuDatMon(id, callback) {
-//     var options = {
-//         method: 'DELETE',
-//         headers: {
-//             "Content-Type": "application/json",
-//         }
-//     };
-
-//     fetch(phieuDatMonAPI + '/' + id, options)
-//         .then(function(response) {
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok ' + response.statusText);
-//             }
-//             return response.json();
-//         })
-//         .then(function() {
-//             var phieuDatMonItem = document.querySelector('.phieudatmon-item-' + id);
-//             if(phieuDatMonItem) {
-//                 phieuDatMonItem.remove();
-//             }
-//         })
-//         .catch(error => console.error('Error deleting phieudatmon:', error));
-// }
-
-// function updatePhieuDatMon(id, data, callback) {
-//     var options = {
-//         method: 'PUT',
-//         body: JSON.stringify(data),
-//         headers: {
-//             "Content-Type": "application/json",
-//         }
-//     };
-
-//     fetch(phieuDatMonAPI + '/' + id, options)
-//         .then(function(response) {
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok ' + response.statusText);
-//             }
-//             return response.json();
-//         })
-//         .then(callback)
-//         .catch(error => console.error('Error updating phieudatmon:', error));
-// }
-
-// async function renderPhieuDatMon(list_phieudatmon) {
-//     var listPhieuDatMon = document.querySelector('tbody');
-//     if (!listPhieuDatMon) {
-//         console.error('No tbody element found');
-//         return;
-//     }
-
-//     try {
-        
-//         const khachHangResponse = await fetch('http://localhost:3000/khachhang');
-//         const khachHang = await khachHangResponse.json();
-
-//         var htmls = list_phieudatmon.map(function(phieudatmon, index) {
-            
-//             const kh = khachHang.find(k => k.id.toString() === phieudatmon.MaKhachHang.toString());
-//             const hoTen = kh ? kh.HoTen : 'Unknown';
-
-//             return `<tr class="phieudatmon-item-${phieudatmon.id}">
-//                     <td>${index + 1}</td>
-//                     <td>${phieudatmon.id}</td>
-//                     <td>${phieudatmon.MaNhanVien}</td>
-//                     <td>${phieudatmon.MaChiNhanh}</td>
-//                     <td>${phieudatmon.MaKhachHang}</td>
-//                     <td>${hoTen}</td>
-//                     <td>${loaithe}</td>
-//                     <td class="edit-icons">
-//                         <button onclick="editPhieuDatMon('${phieudatmon.id}')">✎</button>
-//                         <button onclick="viewOrderDetails('${phieudatmon.id}')">Chi tiết</button>
-//                         <button onclick="deletePhieuDatMon('${phieudatmon.id}', getPhieuDatMon(renderPhieuDatMon))">🗑️</button>
-//                     </td>
-//                 </tr>`;
-//         }).join('');
-
-//         listPhieuDatMon.innerHTML = htmls;
-//     } catch (error) {
-//         console.error('Error fetching KhachHang data:', error);
-//     }
-// }
-
-// function addPhieuDatMon() {
-//     var MaNhanVienInput = document.querySelector('select[id="MaNhanVien"]');
-//     var MaChiNhanhInput = document.querySelector('select[id="MaChiNhanh"]');
-//     var MaKhachHangInput = document.querySelector('select[id="MaKhachHang"]');
-
-//     if (MaNhanVienInput && MaChiNhanhInput && MaKhachHangInput) {
-//         var MaNhanVien = MaNhanVienInput.value.trim();
-//         var MaChiNhanh = MaChiNhanhInput.value.trim();
-//         var MaKhachHang = MaKhachHangInput.value.trim();
-
-//         if (MaNhanVien === "" || MaChiNhanh === "" || MaKhachHang === "") {
-//             alert("Vui lòng điền đầy đủ thông tin vào tất cả các ô.");
-//             return;
-//         }
-
-//         var data = {
-//             MaNhanVien: MaNhanVien,
-//             MaChiNhanh: MaChiNhanh,
-//             MaKhachHang: MaKhachHang
-//         };
-
-//         createPhieuDatMon(data, function() {
-//             getPhieuDatMon(renderPhieuDatMon);
-//             resetForm();
-//         });
-//     }
-// }
-
-// function editPhieuDatMon(id) {
-//     console.log('editPhieuDatMon called with id:', id); // Debugging log
-//     fetch(phieuDatMonAPI)
-//         .then(function(response) {
-//             return response.json();
-//         })
-//         .then(function(phieudatmons) {
-//             console.log('Fetched phieudatmons:', phieudatmons); 
-//             var phieudatmon = phieudatmons.find(function(pdm) {
-//                 return pdm.id == id; 
-//             });
-
-//             if (phieudatmon) {
-//                 console.log('PhieuDatMon found:', phieudatmon);
-//                 var MaNhanVienInput = document.querySelector('select[id="MaNhanVien"]');
-//                 var MaChiNhanhInput = document.querySelector('select[id="MaChiNhanh"]');
-//                 var MaKhachHangInput = document.querySelector('select[id="MaKhachHang"]');
-                
-//                 var themBtn = document.querySelector('#addPlaneButton');
-//                 var formContainer = document.querySelector('#modalOverlay');
-//                 var saveBtn = document.querySelector('.save-button');
-//                 var modalTitle = document.querySelector('.modal h3');
-//                 var formModal = document.querySelector('.modal');
-
-//                 MaNhanVienInput.value = phieudatmon.MaNhanVien;
-//                 MaChiNhanhInput.value = phieudatmon.MaChiNhanh;
-//                 MaKhachHangInput.value = phieudatmon.MaKhachHang;
-
-//                 modalTitle.textContent = 'Chỉnh sửa';
-//                 formModal.style.backgroundColor = '#e8f5e9';
-
-//                 formContainer.style.display = 'flex';
-//                 document.body.style.overflow = 'hidden';
-//                 themBtn.style.display = 'none';
-//                 saveBtn.style.display = 'inline-block';
-
-//                 saveBtn.onclick = function() {
-//                     console.log('Save button clicked'); 
-//                     var MaNhanVien = MaNhanVienInput.value.trim();
-//                     var MaChiNhanh = MaChiNhanhInput.value.trim();
-//                     var MaKhachHang = MaKhachHangInput.value.trim();
-
-//                     if (MaNhanVien === "" || MaChiNhanh === "" || MaKhachHang === "") {
-//                         alert("Vui lòng điền đầy đủ thông tin vào tất cả các ô.");
-//                         return;
-//                     }
-
-//                     var updatedPhieuDatMon = {
-//                         MaNhanVien: MaNhanVien,
-//                         MaChiNhanh: MaChiNhanh,
-//                         MaKhachHang: MaKhachHang
-//                     };
-
-//                     updatePhieuDatMon(id, updatedPhieuDatMon, function() {
-//                         getPhieuDatMon(renderPhieuDatMon);
-//                         resetForm();
-
-//                         modalTitle.textContent = 'Thêm Phiếu Đặt Món';
-//                         saveBtn.style.display = 'none';
-//                         themBtn.style.display = 'inline-block';
-//                         formContainer.style.display = 'none';
-//                         document.body.style.overflow = 'auto';
-//                         formModal.style.backgroundColor = '';
-//                     });
-//                 };
-//             } else {
-//                 console.error('PhieuDatMon not found'); // Debugging log
-//             }
-//         })
-//         .catch(error => console.error('Error editing phieudatmon:', error));
-// }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const searchButton = document.getElementById('searchButton');
-//     const searchInput = document.getElementById('searchInput');
-
-//     searchButton.addEventListener('click', function() {
-//         const searchTerm = searchInput.value.trim().toLowerCase();
-//         if (searchTerm) {
-//             searchPhieuDatMon(searchTerm);
-//         } else {
-//             getPhieuDatMon(renderPhieuDatMon);
-//         }
-//     });
-
-//     searchInput.addEventListener('input', function() {
-//         const searchTerm = searchInput.value.trim().toLowerCase();
-//         if (!searchTerm) {
-//             getPhieuDatMon(renderPhieuDatMon);
-//         }
-//     });
-// });
-
-// function searchPhieuDatMon(searchTerm) {
-//     fetch(phieuDatMonAPI)
-//         .then(function(response) {
-//             return response.json();
-//         })
-//         .then(function(phieudatmons) {
-//             const filteredPhieuDatMons = phieudatmons.filter(function(phieudatmon) {
-//                 const id = phieudatmon.id;
-
-//                 if (typeof id === 'string' && typeof searchTerm === 'string') {
-//                     return id.toLowerCase() === searchTerm;
-//                 } else if (typeof id === 'number' && !isaaNaN(searchTerm)) {
-//                     return id === Number(searchTerm);
-//                 } else {
-//                     return id.toString().toLowerCase() === searchTerm;
-//                 }
-//             });
-//             renderPhieuDatMon(filteredPhieuDatMons);
-//         })
-//         .catch(error => console.error('Error searching phieudatmon:', error));
-// }
 const APIs = {
-    datve: 'http://localhost:3000/datve',
-    taicho: 'http://localhost:3000/taicho',
-    offline: 'http://localhost:3000/offline'
+    datve: 'http://localhost:3000/ONLINEDATVE',
+    taicho: 'http://localhost:3000/ONLINETAICHO',
+    offline: 'http://localhost:3000/PHIEUDATOFFLINE'
 };
 
 async function getAllOrders() {
@@ -400,7 +42,7 @@ async function renderPhieuDatMon() {
                 offline: 'Đặt offline'
             }[order.type];
 
-            return `<tr>
+            return `<tr class="order-item-${order.type}-${order.id}" data-type="${order.type}" data-id="${order.id}">
                 <td>${index + 1}</td>
                 <td>${order.id}</td>
                 <td>${order.MaNhanVien}</td>
@@ -498,59 +140,508 @@ function closeModal() {
         modal.style.display = 'none';
     }
 }
+function deleteOrder(type, id) {
+    if (!confirm('Bạn có chắc chắn muốn xóa?')) {
+        return;
+    }
 
+    const endpoints = {
+        'online': 'online',
+        'taicho': 'taicho', 
+        'offline': 'offline'
+    };
 
+    const resource = endpoints[type];
+    if (!resource) {
+        toastr.error('Loại đơn không hợp lệ');
+        return;
+    }
+
+   
+    const orderItem = document.querySelector(`.order-item-${type}-${id}`);
+    if (orderItem) {
+        orderItem.remove();
+    }
+
+    fetch(`http://localhost:3000/${resource}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(() => {
+        toastr.success('Xóa thành công');
+    })
+    .catch(error => {
+        console.error('Delete error:', error);
+        toastr.error('Lỗi khi xóa');
+        renderPhieuDatMon(); // Re-render only on error
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
     renderPhieuDatMon();
 });
 async function editOrder(type, orderId) {
     try {
-        // Fetch necessary data
-        const order = await fetch(`http://localhost:3000/orders/${orderId}`).then(res => res.json());
-        const employees = await fetch('http://localhost:3000/nhanvien').then(res => res.json());
-        const branches = await fetch('http://localhost:3000/chinhanh').then(res => res.json());
-        const customers = await fetch('http://localhost:3000/khachhang').then(res => res.json());
+        // Fetch order and related data
+        const [order, employees, branches, customers] = await Promise.all([
+            fetch(`${APIs[type]}/${orderId}`).then(res => res.json()),
+            fetch('http://localhost:3000/nhanvien').then(res => res.json()),
+            fetch('http://localhost:3000/chinhanh').then(res => res.json()),
+            fetch('http://localhost:3000/khachhang').then(res => res.json())
+        ]);
 
-        const content = `
+        // Build common form fields
+        let formContent = `
             <div class="edit-form">
-                <h2>Chỉnh sửa phiếu đặt món</h2>
-                <div class="form-group">
-                    <label>Nhân viên:</label>
-                    <select id="MaNhanVien">
-                        ${employees.map(nv => `
-                            <option value="${nv.id}" ${nv.id === order.MaNhanVien ? 'selected' : ''}>
-                                ${nv.HoTen}
-                            </option>
-                        `).join('')}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Chi nhánh:</label>
-                    <select id="MaChiNhanh">
-                        ${branches.map(cn => `
-                            <option value="${cn.id}" ${cn.id === order.MaChiNhanh ? 'selected' : ''}>
-                                ${cn.TenChiNhanh}
-                            </option>
-                        `).join('')}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Khách hàng:</label>
-                    <select id="MaKhachHang">
-                        ${customers.map(kh => `
-                            <option value="${kh.id}" ${kh.id === order.MaKhachHang ? 'selected' : ''}>
-                                ${kh.HoTen}
-                            </option>
-                        `).join('')}
-                    </select>
-                </div>
+                <h2>Chỉnh sửa đơn hàng</h2>
+                <form id="editOrderForm" onsubmit="handleEditSubmit(event, '${type}', ${orderId})">
+                    <div class="form-group">
+                        <label>Nhân viên:</label>
+                        <select name="MaNhanVien" required>
+                            ${employees.map(nv => `
+                                <option value="${nv.id}" ${nv.id === order.MaNhanVien ? 'selected' : ''}>
+                                    ${nv.HoTen}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Chi nhánh:</label>
+                        <select name="MaChiNhanh" required>
+                            ${branches.map(cn => `
+                                <option value="${cn.id}" ${cn.id === order.MaChiNhanh ? 'selected' : ''}>
+                                    ${cn.TenChiNhanh}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Khách hàng:</label>
+                        <select name="MaKhachHang" required>
+                            ${customers.map(kh => `
+                                <option value="${kh.id}" ${kh.id === order.MaKhachHang ? 'selected' : ''}>
+                                    ${kh.HoTen}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>`;
 
-                <button onclick="updateOrder('${orderId}')">Cập nhật</button>
+        // Add type-specific fields
+        switch(type) {
+            case 'datve':
+                formContent += `
+                    <div class="form-group">
+                        <label>Địa chỉ:</label>
+                        <input type="text" name="DiaChi" value="${order.DiaChi || ''}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phí giao hàng:</label>
+                        <input type="number" name="PhiGiaoHang" value="${order.PhiGiaoHang || ''}">
+                    </div>`;
+                break;
+            case 'taicho':
+                formContent += `
+                    <div class="form-group">
+                        <label>Số bàn:</label>
+                        <input type="number" name="SoBan" value="${order.SoBan || ''}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày đến:</label>
+                        <input type="date" name="NgayDen" value="${order.NgayDen || ''}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Giờ đến:</label>
+                        <input type="time" name="GioDen" value="${order.GioDen || ''}" required>
+                    </div>`;
+                break;
+            case 'offline':
+                formContent += `
+                    <div class="form-group">
+                        <label>Số bàn:</label>
+                        <input type="number" name="SoBan" value="${order.SoBan || ''}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày lập:</label>
+                        <input type="date" name="NgayLap" value="${order.NgayLap?.split('T')[0] || ''}" required>
+                    </div>`;
+                break;
+        }
+
+        formContent += `
+                    <div class="form-group">
+                        <label>Ghi chú:</label>
+                        <input type="input" name="GhiChu" value="${order.GhiChu || ''}" >
+                    </div>
+                    <div class="button-group">
+                        <button type="submit">Lưu</button>
+                        <button type="button" onclick="closeModal()">Hủy</button>
+                    </div>
+                </form>
             </div>`;
-        
-        showModal(content);
+
+        showModal(formContent);
+
     } catch (error) {
         console.error('Error:', error);
+        toastr.error('Lỗi khi tải dữ liệu');
     }
 }
 
+async function checkTableAvailable(chiNhanhId, tableNumber, currentOrderId = null) {
+    try {
+        console.log('Checking table:', {chiNhanhId, tableNumber, currentOrderId}); // Debug
+
+        const [offlineOrders, taichoOrders] = await Promise.all([
+            fetch('http://localhost:3000/PHIEUDATOFFLINE').then(res => res.json()),
+            fetch('http://localhost:3000/ONLINETAICHO').then(res => res.json())
+        ]);
+
+        // Normalize input values
+        const targetChiNhanh = String(chiNhanhId).trim();
+        const targetTable = String(tableNumber).trim();
+
+        // Debug log
+        console.log('All orders:', [...offlineOrders, ...taichoOrders]);
+
+        const conflictingOrder = [...offlineOrders, ...taichoOrders].find(order => {
+            // Skip current order
+            if (currentOrderId && order.id === currentOrderId) {
+                return false;
+            }
+
+            const orderChiNhanh = String(order.MaChiNhanh).trim();
+            const orderTable = String(order.SoBan).trim();
+
+            console.log('Comparing:', {
+                orderChiNhanh, targetChiNhanh,
+                orderTable, targetTable,
+                match: orderChiNhanh === targetChiNhanh && orderTable === targetTable
+            });
+
+            return orderChiNhanh === targetChiNhanh && 
+                   orderTable === targetTable;
+        });
+
+        if (conflictingOrder) {
+            console.log('Conflict found:', conflictingOrder); // Debug
+            throw new Error(`Bàn ${targetTable} đã được đặt trước tại chi nhánh này`);
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Table check error:', error);
+        throw error;
+    }
+}
+
+async function handleEditSubmit(event, type, orderId) {
+    event.preventDefault();
+    try {
+        const form = event.target;
+        const formData = new FormData(form);
+        const orderData = Object.fromEntries(formData);
+
+        console.log('Edit data:', {type, orderId, orderData}); // Debug
+
+        if ((type === 'taicho' || type === 'offline') && orderData.SoBan) {
+            const originalOrder = await fetch(`${APIs[type]}/${orderId}`).then(res => res.json());
+            
+            console.log('Original order:', originalOrder); // Debug
+
+            // Add strict validation
+            if (!orderData.MaChiNhanh || !orderData.SoBan) {
+                toastr.error('Thiếu thông tin bàn hoặc chi nhánh');
+                return;
+            }
+
+            if (String(originalOrder.SoBan) !== String(orderData.SoBan) || 
+                String(originalOrder.MaChiNhanh) !== String(orderData.MaChiNhanh)) {
+                
+                let isAvailable = false;
+                try {
+                    isAvailable = await checkTableAvailable(
+                        orderData.MaChiNhanh,
+                        orderData.SoBan,
+                        orderId
+                    );
+                } catch (error) {
+                    console.error('Table check failed:', error); // Debug
+                    toastr.error(error.message);
+                    return false;
+                }
+
+                if (!isAvailable) {
+                    toastr.error('Bàn đã được đặt');
+                    return false;
+                }
+            }
+        }
+
+        const response = await fetch(`${APIs[type]}/${orderId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Cập nhật thất bại: ${errorText}`);
+        }
+
+        toastr.success('Cập nhật thành công');
+        closeModal();
+        renderPhieuDatMon();
+
+    } catch (error) {
+        console.error('Update error:', error);
+        toastr.error(error.message);
+        return false;
+    }
+}
+
+
+async function checkTableAvailable(chiNhanhId, tableNumber) {
+    try {
+
+        const [offlineOrders, onlineOrders] = await Promise.all([
+            fetch('http://localhost:3000/PHIEUDATOFFLINE').then(res => res.json()),
+            fetch('http://localhost:3000/ONLINETAICHO').then(res => res.json()) 
+        ]);
+
+
+        const isTableTaken = [...offlineOrders, ...onlineOrders].some(order => 
+            order.MaChiNhanh === chiNhanhId && 
+            order.SoBan === tableNumber
+        );
+
+        return !isTableTaken;
+    } catch (error) {
+        console.error('Error checking table:', error);
+        return false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const openModalButton = document.getElementById('openModalButton');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const addPlaneButton = document.getElementById('addPlaneButton');
+    const closeModalButton = document.getElementById('closeModalButton');
+
+
+    toastr.options = {
+        closeButton: true,
+        progressBar: true,
+        positionClass: "toast-top-right",
+        timeOut: 3000
+    };
+
+
+    openModalButton.addEventListener('click', async function() {
+        modalOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        await loadSelectData();
+    });
+
+
+    addPlaneButton.addEventListener('click', async function() {
+        const MaNhanVien = document.getElementById('MaNhanVien').value;
+        const MaChiNhanh = document.getElementById('MaChiNhanh').value;
+        const MaKhachHang = document.getElementById('MaKhachHang').value;
+        const SoBan = document.getElementById('SoBan').value;
+        const NgayLap = document.getElementById('NgayLap')?.value || '';
+
+
+        if (!MaNhanVien || !MaChiNhanh || !MaKhachHang || !SoBan || !NgayLap) {
+            toastr.error('Vui lòng điền đầy đủ thông tin');
+            return;
+        }
+
+        try {
+
+        const isAvailable = await checkTableAvailable(MaChiNhanh, SoBan);
+        if (!isAvailable) {
+            toastr.error(`Bàn ${SoBan} đã có người đặt`);
+            return;
+        }
+
+
+        
+            const newOrder = {
+                id: Date.now().toString(),
+                MaNhanVien,
+                MaChiNhanh,
+                MaKhachHang,
+                SoBan,
+                NgayLap,
+                type: 'offline'
+            };
+
+         
+            const response = await fetch('http://localhost:3000/PHIEUDATOFFLINE', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newOrder)
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const savedOrder = await response.json();
+
+       
+            renderPhieuDatMon();
+            
+       
+            document.getElementById('addPlaneForm').reset();
+            modalOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            toastr.success('Thêm phiếu thành công');
+
+        } catch (error) {
+            console.error('Error:', error);
+            toastr.error('Lỗi khi thêm phiếu');
+        }
+    });
+
+
+    closeModalButton.addEventListener('click', function() {
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.getElementById('addPlaneForm').reset();
+    });
+});
+
+async function loadSelectData() {
+    try {
+        const [nhanvien, chinhanh, khachhang] = await Promise.all([
+            fetch('http://localhost:3000/nhanvien').then(res => res.json()),
+            fetch('http://localhost:3000/chinhanh').then(res => res.json()),
+            fetch('http://localhost:3000/khachhang').then(res => res.json())
+        ]);
+
+ 
+        document.getElementById('MaNhanVien').innerHTML = `
+            <option value="">Chọn nhân viên</option>
+            ${nhanvien.map(nv => `<option value="${nv.id}">${nv.HoTen}</option>`).join('')}`;
+
+        document.getElementById('MaChiNhanh').innerHTML = `
+            <option value="">Chọn chi nhánh</option>
+            ${chinhanh.map(cn => `<option value="${cn.id}">${cn.TenChiNhanh}</option>`).join('')}`;
+
+        document.getElementById('MaKhachHang').innerHTML = `
+            <option value="">Chọn khách hàng</option>
+            ${khachhang.map(kh => `<option value="${kh.id}">${kh.HoTen}</option>`).join('')}`;
+
+    } catch (error) {
+        console.error('Error loading data:', error);
+        toastr.error('Lỗi tải dữ liệu');
+    }
+}
+
+
+function resetForm() {
+    const form = document.getElementById('addPlaneForm');
+    if (form) {
+        form.reset();
+    }
+}
+// Add event listeners when document loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing event listeners...
+
+    const searchButton = document.getElementById('searchButton');
+    const searchInput = document.getElementById('searchInput');
+
+ 
+    searchButton.addEventListener('click', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        if (searchTerm) {
+            searchPhieuDat(searchTerm);
+        } else {
+            renderPhieuDatMon(); 
+        }
+    });
+
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        if (!searchTerm) {
+            renderPhieuDatMon();
+        }
+    });
+});
+
+
+async function searchPhieuDat(searchTerm) {
+    try {
+        const allOrders = await getAllOrders();
+        const khachHang = await fetch('http://localhost:3000/khachhang').then(res => res.json());
+
+        const lowerSearchTerm = searchTerm.trim().toLowerCase();
+        
+        const filteredOrders = allOrders.filter(order => {
+            const kh = khachHang.find(k => k.id.toString() === order.MaKhachHang.toString());
+            const customerName = kh ? kh.HoTen.toLowerCase() : '';
+
+  
+            if (typeof order.id === 'string' && order.id.toLowerCase() === lowerSearchTerm) {
+                return true;
+            }
+            if (typeof order.id === 'number' && order.id.toString() === searchTerm) {
+                return true;
+            }
+
+       
+            if (customerName === lowerSearchTerm) {
+                return true;
+            }
+
+            return false;
+        });
+
+     
+        const tbody = document.querySelector('tbody');
+        if (!tbody) return;
+
+        const html = filteredOrders.map((order, index) => {
+            const kh = khachHang.find(k => k.id.toString() === order.MaKhachHang.toString());
+            const hoTen = kh ? kh.HoTen : 'Unknown';
+            const typeText = {
+                datve: 'Đặt ship về',
+                taicho: 'Đặt tại chỗ',
+                offline: 'Đặt offline' 
+            }[order.type];
+
+            return `<tr class="order-item-${order.type}-${order.id}" data-type="${order.type}" data-id="${order.id}">
+                <td>${index + 1}</td>
+                <td>${order.id}</td>
+                <td>${order.MaNhanVien}</td>
+                <td>${order.MaChiNhanh}</td>
+                <td>${order.MaKhachHang}</td>
+                <td>${hoTen}</td>
+                <td>${typeText}</td>
+                <td>
+                    <button onclick="editOrder('${order.type}', '${order.id}')">✎</button>
+                    <button onclick="viewOrderDetails('${order.type}', '${order.id}')">👁️</button>
+                    <button onclick="deleteOrder('${order.type}', '${order.id}')">🗑️</button>
+                </td>
+            </tr>`;
+        }).join('');
+
+        tbody.innerHTML = html;
+
+    } catch (error) {
+        console.error('Error searching orders:', error);
+        toastr.error('Lỗi khi tìm kiếm');
+    }
+}

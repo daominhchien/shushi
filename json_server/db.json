@@ -12,15 +12,15 @@
       "id": "NV001"
     },
     {
-      "id": "NV002",
-      "MaBoPhan": "BP002",
-      "HoTen": "Tran Thi B",
-      "NgaySinh": "1992-02-02",
-      "GioiTinh": "Nu",
-      "Luong": "12000000",
-      "SDT": "0987654321",
-      "DiaChi": "456 Nguyen Trai, Ha Noi",
-      "MaChiNhanh": "CN002"
+      "MaBoPhan": "BP001",
+      "MaChiNhanh": "CN001",
+      "HoTen": "Châu",
+      "NgaySinh": "2024-12-03",
+      "GioiTinh": "Nam",
+      "Luong": "10000",
+      "SDT": "037666",
+      "DiaChi": "pn",
+      "id": "Lnzn-18"
     }
   ],
   "chinhanh": [
@@ -230,15 +230,20 @@
       "MaMon": "1",
       "SoLuong": "1222",
       "id": 1
+    },
+    {
+      "MaPhieuDatMon": "1734204591795",
+      "MaMon": "3",
+      "SoLuong": "67",
+      "id": 2
     }
   ],
-  "datve": [
+  "ONLINEDATVE": [
     {
       "id": "1",
       "MaNhanVien": "NV01",
       "MaChiNhanh": "CN01",
-      "MaKhachHang": "KH01",
-      "SoBan": "3",
+      "MaKhachHang": "1",
       "ThoiDiemTruyCap": "2024-03-20",
       "ThoiGianTruyCap": "15:00",
       "GhiChu": "Bàn view đẹp",
@@ -247,28 +252,59 @@
       "PhiGiaoHang": "1800"
     }
   ],
-  "taicho": [
+  "ONLINETAICHO": [
     {
-      "id": "2",
-      "MaNhanVien": "NV02",
-      "MaChiNhanh": "CN01",
-      "MaKhachHang": "KH01",
-      "SoBan": "5",
-      "ThoiDiemTruyCap": "2024-03-20",
-      "ThoiGianTruyCap": "15:00",
-      "GhiChu": "Bàn view đẹp",
+      "MaNhanVien": "NV001",
+      "MaChiNhanh": "CN001",
+      "MaKhachHang": "1",
+      "SoBan": "98",
       "NgayDen": "2024-03-21",
-      "GioDen": "18:00"
+      "GioDen": "18:00",
+      "GhiChu": "Bàn view đẹp",
+      "id": "2"
     }
   ],
-  "offline": [
+  "PHIEUDATOFFLINE": [
     {
-      "id": "3",
-      "MaNhanVien": "NV01",
-      "MaChiNhanh": "CN01",
-      "MaKhachHang": "KH01",
-      "SoBan": "3",
+      "id": "33",
+      "MaNhanVien": "NV001",
+      "MaChiNhanh": "CN001",
+      "MaKhachHang": "1",
+      "SoBan": "18",
       "NgayLap": "2024-03-20"
+    },
+    {
+      "id": "34",
+      "MaNhanVien": "NV001",
+      "MaChiNhanh": "CN001",
+      "MaKhachHang": "1",
+      "SoBan": "44",
+      "NgayLap": "2024-03-20"
+    },
+    {
+      "MaNhanVien": "NV001",
+      "MaChiNhanh": "CN001",
+      "MaKhachHang": "1",
+      "SoBan": "99",
+      "NgayLap": "2024-03-20",
+      "id": "1734204591795"
+    },
+    {
+      "MaNhanVien": "NV001",
+      "MaChiNhanh": "CN002",
+      "MaKhachHang": "1",
+      "SoBan": "99",
+      "NgayLap": "2024-12-25",
+      "id": "1734205867173"
+    },
+    {
+      "MaNhanVien": "NV001",
+      "MaChiNhanh": "CN001",
+      "MaKhachHang": "3",
+      "SoBan": "3",
+      "NgayLap": "2024-12-26",
+      "GhiChu": "",
+      "id": "1734206065182"
     }
   ]
 }

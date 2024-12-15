@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="D:\Shushi\font\fontawesome-free-6.6.0-web\fontawesome-free-6.6.0-web\css\all.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Then load toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
     <title>Hệ Thống Shushi</title>
     <link rel="stylesheet" href="D:\Shushi\css\style_QLPDM.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -177,7 +183,7 @@
             
             <div id="container">
                 <div id="ADD" class="add-plane">
-                    <button id="openModalButton">Thêm Phiếu Đặt Món</button>
+                    <button id="openModalButton">Thêm Phiếu Đặt Món Offline</button>
                 </div>
                 
                 <!-- Modal Overlay -->
@@ -200,6 +206,7 @@
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class ="form-row">
                                 <div class="form-group">
                                     <label for="MaKhachHang">Mã KH:</label>
@@ -207,17 +214,25 @@
                                         <option value="1">Chọn KH</option>
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                        <label for="SoBan">Số bàn:</label>
+                                        <input type="text" id="SoBan" required>
+                                </div>
                             </div>
 
+                            <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="NgayLap">Ngày cập nhật:</label>
+                                        <input type="date" id="NgayLap" required>
+                                    </div>
+                            </div>
+
+                            
 
                             <button type="button" id="addPlaneButton">Thêm</button>
                             <button type="button" class="save-button" style="display: none;">Lưu thay đổi</button>
                             
                         </form>
-
-
-                       
-
                     </div>
                 </div>
             </div>
